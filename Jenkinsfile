@@ -7,4 +7,9 @@ pipeline {
             }
         }
     }
+    post {
+        success {
+            sh 'echo Hello'
+        }
+    }
 }
