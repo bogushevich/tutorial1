@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker { image 'nsis:v3.08' } }
+    agent any
     tools {
         go 'go-1.18'
     }
