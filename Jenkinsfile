@@ -1,15 +1,23 @@
 pipeline {
-    agent { docker { image 'golang:1.17.5-alpine' } }
+    agent { docker { image 'nsis:v3.08' } }
+    tools {
+        go 'go-1.18'
+    }
     stages {
-        stage('build') {
+        stage('Compile') {
             steps {
+                sh 'echo $GOROOT'
+                sh 'echo $PATH'
                 sh 'go version'
             }
         }
     }
     post {
         success {
-            sh 'echo Hello'
+            echo 'Successfully'
+        }
+        failure {
+            echo 'Failed'
         }
     }
 }
