@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { docker { image 'alpine' } }
     tools {
         go 'go-1.18'
     }
