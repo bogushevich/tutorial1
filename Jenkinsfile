@@ -6,6 +6,9 @@ pipeline {
     stages {
         stage('Compile') {
             steps {
+                sh 'pwd'
+                sh 'ls /'
+                sh 'ls /home'
                 sh 'echo $GOROOT'
                 sh 'echo $PATH'
                 sh 'go version'
